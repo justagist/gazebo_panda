@@ -1,0 +1,4 @@
+- git:
+    local-name: franka_panda_description
+    uri: https://github.com/JustaGist/franka_panda_description
+    version: master

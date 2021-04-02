@@ -5,7 +5,6 @@ gazebo_panda:
     publish_rate: 100
 
 
-  # Panda SDK Controllers: Position --------------------------
   effort_joint_position_controller:
     type: effort_controllers/JointGroupPositionController
     joints:
@@ -31,32 +30,6 @@ gazebo_panda:
     panda_joint7:
       pid: {p: 3000,  i: 10.0, d: 25.0}
 
-  # Panda SDK Controllers: Velocity --------------------------
-  # velocity_joint_velocity_controller:
-  #   joints:
-  #     panda_joint1_controller:
-  #       joint: panda_joint1
-  #       pid: {p: 10,  i: 0.0, d: 0.1}
-  #     panda_joint2_controller:
-  #       joint: panda_joint2
-  #       pid: {p: 100,  i: 1.0, d: 0.1}
-  #     panda_joint3_controller:
-  #       joint: panda_joint3
-  #       pid: {p: 0.05,  i: 0.0, d: 0.01}
-  #     panda_joint4_controller:
-  #       joint: panda_joint4
-  #       pid: {p: 0.5,  i: 0.01, d: 0.1}
-  #     panda_joint5_controller:
-  #       joint: panda_joint5
-  #       pid: {p: 1.0,  i: 0.0, d: 0.01}
-  #     panda_joint6_controller:
-  #       joint: panda_joint6
-  #       pid: {p: 0.05,  i: 0.0, d: 0.01}
-  #     panda_joint7_controller:
-  #       joint: panda_joint7
-  #       pid: {p: 0.05,  i: 0.0, d: 0.01}
-
-  # Panda SDK Controllers: Effort --------------------------
   effort_joint_torque_controller:
     type: effort_controllers/JointGroupEffortController
     joints:
@@ -67,3 +40,58 @@ gazebo_panda:
       - panda_joint5
       - panda_joint6
       - panda_joint7
+
+  # joint1_velocity_controller:
+  #   type: effort_controllers/JointVelocityController
+  #   joint: panda_joint1
+  #   pid: {p: 10,  i: 0.0, d: 0.1}
+  # joint2_velocity_controller:
+  #   type: effort_controllers/JointVelocityController
+  #   joint: panda_joint2
+  #   pid: {p: 100,  i: 1.0, d: 0.1}
+  # joint3_velocity_controller:
+  #   type: effort_controllers/JointVelocityController
+  #   joint: panda_joint3
+  #   pid: {p: 0.05,  i: 0.0, d: 0.01}
+  # joint4_velocity_controller:
+  #   type: effort_controllers/JointVelocityController
+  #   joint: panda_joint4
+  #   pid: {p: 0.5,  i: 0.01, d: 0.1}
+  # joint5_velocity_controller:
+  #   type: effort_controllers/JointVelocityController
+  #   joint: panda_joint5
+  #   pid: {p: 1.0,  i: 0.0, d: 0.01}
+  # joint6_velocity_controller:
+  #   type: effort_controllers/JointVelocityController
+  #   joint: panda_joint6
+  #   pid: {p: 0.05,  i: 0.0, d: 0.01}
+  # joint7_velocity_controller:
+  #   type: effort_controllers/JointVelocityController
+  #   joint: panda_joint7
+  #   pid: {p: 0.05,  i: 0.0, d: 0.01}
+
+
+  # velocity_joint_velocity_controller: # group velocity control does not seem to be possible without velocity interface. Alternatively velocity control can be done independently for each joint using effort_controllers/JointVelocityController
+  #   type: velocity_controllers/JointGroupVelocityController
+  #   joints:
+  #     - panda_joint1
+  #     - panda_joint2
+  #     - panda_joint3
+  #     - panda_joint4
+  #     - panda_joint5
+  #     - panda_joint6
+  #     - panda_joint7
+  #   panda_joint1:
+  #     pid: {p: 10,  i: 0.0, d: 0.1}
+  #   panda_joint2:
+  #     pid: {p: 100,  i: 1.0, d: 0.1}
+  #   panda_joint3:
+  #     pid: {p: 0.05,  i: 0.0, d: 0.01}
+  #   panda_joint4:
+  #     pid: {p: 0.5,  i: 0.01, d: 0.1}
+  #   panda_joint5:
+  #     pid: {p: 1.0,  i: 0.0, d: 0.01}
+  #   panda_joint6:
+  #     pid: {p: 0.05,  i: 0.0, d: 0.01}
+  #   panda_joint7:
+  #     pid: {p: 0.05,  i: 0.0, d: 0.01}

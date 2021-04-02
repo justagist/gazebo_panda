@@ -20,6 +20,13 @@
        output="screen" args="load
                                          gazebo_panda/effort_joint_torque_controller  
                                          "/>
+                                         <!-- gazebo_panda/joint1_velocity_controller
+                                         gazebo_panda/joint2_velocity_controller
+                                         gazebo_panda/joint3_velocity_controller
+                                         gazebo_panda/joint4_velocity_controller
+                                         gazebo_panda/joint5_velocity_controller
+                                         gazebo_panda/joint6_velocity_controller
+                                         gazebo_panda/joint7_velocity_controller -->
                                          <!-- gazebo_panda/velocity_joint_velocity_controller
                                          gazebo_panda/effort_joint_gravity_controller -->
 
